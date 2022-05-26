@@ -1,0 +1,6 @@
+name: BattleTournaments
+version: 1.0.0
+description: BattleTournaments
+main: fr.romitou.battletournaments.BattleTournaments
+libraries:
+  - org.mongodb:mongodb-driver-sync:4.6.0
