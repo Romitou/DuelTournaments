@@ -1,7 +1,7 @@
 package fr.romitou.battletournaments.elements.battlePlayers.tasks;
 
 import fr.romitou.battletournaments.elements.battlePlayers.objects.BattlePlayer;
-import fr.romitou.battletournaments.engine.tasks.BattleEventTask;
+import fr.romitou.battletournaments.tasks.tasks.BattleEventTask;
 import net.kyori.adventure.text.Component;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerJoinEvent;

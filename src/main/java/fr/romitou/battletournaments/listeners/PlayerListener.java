@@ -2,7 +2,7 @@ package fr.romitou.battletournaments.listeners;
 
 import fr.romitou.battletournaments.BattleTournaments;
 import fr.romitou.battletournaments.elements.battlePlayers.tasks.PlayerJoinTask;
-import fr.romitou.battletournaments.engine.TaskManager;
+import fr.romitou.battletournaments.tasks.TaskManager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
