@@ -4,3 +4,6 @@ description: BattleTournaments
 main: fr.romitou.battletournaments.BattleTournaments
 libraries:
   - org.mongodb:mongodb-driver-sync:4.6.0
+commands:
+  battletournaments:
+    description: The main command
