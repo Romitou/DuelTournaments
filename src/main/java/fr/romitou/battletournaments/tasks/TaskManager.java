@@ -1,8 +1,8 @@
-package fr.romitou.battletournaments.engine;
+package fr.romitou.battletournaments.tasks;
 
 import fr.romitou.battletournaments.BattleTournaments;
-import fr.romitou.battletournaments.engine.tasks.BattleEventTask;
-import fr.romitou.battletournaments.engine.tasks.BattleTask;
+import fr.romitou.battletournaments.tasks.tasks.BattleEventTask;
+import fr.romitou.battletournaments.tasks.tasks.BattleTask;
 
 public record TaskManager(BattleTournaments plugin) {
 

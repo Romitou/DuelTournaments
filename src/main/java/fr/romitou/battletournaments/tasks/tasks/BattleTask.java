@@ -1,4 +1,4 @@
-package fr.romitou.battletournaments.engine.tasks;
+package fr.romitou.battletournaments.tasks.tasks;
 
 import fr.romitou.battletournaments.BattleTournaments;
 

@@ -1,4 +1,4 @@
-package fr.romitou.battletournaments.engine.tasks;
+package fr.romitou.battletournaments.tasks.tasks;
 
 public abstract class BattleEventTask<T> extends BattleTask {
 
