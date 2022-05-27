@@ -19,7 +19,7 @@ public class CommandManager implements TabExecutor {
 
     private final BattleTournaments plugin;
     private final Set<EngineBattleCommand> commands = new HashSet<>();
-    private final Class<? extends Annotation>[] annotations = new Class[]{Name.class, Permission.class, UsableBy.class};
+    private final List<Class<? extends Annotation>> annotations = List.of(Name.class, Permission.class, UsableBy.class);
 
     public CommandManager(BattleTournaments plugin) {
         this.plugin = plugin;
@@ -44,7 +44,6 @@ public class CommandManager implements TabExecutor {
         command.setPlugin(plugin);
         EngineBattleCommand engineCommand = new EngineBattleCommand(command, name.value(), usableBy.value(), permission.value());
         commands.add(engineCommand);
-        System.out.println(commands);
     }
 
     public Optional<EngineBattleCommand> getCommand(String name) {
@@ -92,10 +91,19 @@ public class CommandManager implements TabExecutor {
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        Optional<EngineBattleCommand> battleCommand = getCommand(command.getName());
+        if (args.length <= 1) {
+            String prefix = args.length == 1 ? args[0].toLowerCase() : "";
+            return commands.stream()
+                    .filter(c -> sender.hasPermission(c.getPermission()))
+                    .map(EngineBattleCommand::getName)
+                    .filter(name -> name.toLowerCase().startsWith(prefix))
+                    .sorted()
+                    .toList();
+        }
+        Optional<EngineBattleCommand> battleCommand = getCommand(args[0]);
         if (battleCommand.isEmpty()) {
             return List.of();
         }
-        return battleCommand.get().getBattleCommand().list(sender, label, args);
+        return battleCommand.get().getBattleCommand().list(sender, label, Arrays.copyOfRange(args, 1, args.length));
     }
 }

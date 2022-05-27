@@ -1,9 +1,12 @@
 name: BattleTournaments
 version: 1.0.0
-description: BattleTournaments
+description: High-performance tournament and arena duel system for Minecraft servers.
+author: Romitou
+api-version: 1.18
 main: fr.romitou.battletournaments.BattleTournaments
 libraries:
   - org.mongodb:mongodb-driver-sync:4.6.0
 commands:
   battletournaments:
-    description: The main command
+    description: Primary management command for BattleTournaments
+    permission: battletournaments.use
